@@ -1,0 +1,132 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1110-g18392a46)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_0000022da1738930 .scope module, "freq_divider_tb" "freq_divider_tb" 2 36;
+ .timescale 0 0;
+v0000022da17444b0_0 .var "clk", 0 0;
+v0000022da17438d0_0 .net "outby2", 0 0, L_0000022da1743c90;  1 drivers
+v0000022da1743ab0_0 .net "outby3", 0 0, L_0000022da184ab70;  1 drivers
+v0000022da17442d0_0 .net "outby4", 0 0, L_0000022da1743d30;  1 drivers
+v0000022da1744370_0 .net "outby5", 0 0, L_0000022da1738ac0;  1 drivers
+S_0000022da1748080 .scope module, "uut" "freq_divider" 2 40, 2 1 0, S_0000022da1738930;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "clk";
+    .port_info 1 /OUTPUT 1 "outby2";
+    .port_info 2 /OUTPUT 1 "outby3";
+    .port_info 3 /OUTPUT 1 "outby4";
+    .port_info 4 /OUTPUT 1 "outby5";
+L_0000022da184ab70 .functor OR 1, L_0000022da1744410, v0000022da1744190_0, C4<0>, C4<0>;
+L_0000022da1738ac0 .functor OR 1, L_0000022da1743b50, v0000022da1744230_0, C4<0>, C4<0>;
+v0000022da184bf30_0 .net *"_ivl_5", 0 0, L_0000022da1744410;  1 drivers
+v0000022da1847230_0 .net *"_ivl_9", 0 0, L_0000022da1743b50;  1 drivers
+v0000022da1846b60_0 .net "clk", 0 0, v0000022da17444b0_0;  1 drivers
+v0000022da184aad0_0 .var "count", 4 0;
+v0000022da1748210_0 .var "mod3_counter", 1 0;
+v0000022da17440f0_0 .var "mod5_counter", 2 0;
+v0000022da1743bf0_0 .net "outby2", 0 0, L_0000022da1743c90;  alias, 1 drivers
+v0000022da1743650_0 .net "outby3", 0 0, L_0000022da184ab70;  alias, 1 drivers
+v0000022da1744050_0 .net "outby4", 0 0, L_0000022da1743d30;  alias, 1 drivers
+v0000022da1743970_0 .net "outby5", 0 0, L_0000022da1738ac0;  alias, 1 drivers
+v0000022da1744190_0 .var "shiftforby3", 0 0;
+v0000022da1744230_0 .var "shiftforby5", 0 0;
+E_0000022da17383e0 .event negedge, v0000022da1846b60_0;
+E_0000022da17378e0 .event posedge, v0000022da1846b60_0;
+L_0000022da1743c90 .part v0000022da184aad0_0, 0, 1;
+L_0000022da1743d30 .part v0000022da184aad0_0, 1, 1;
+L_0000022da1744410 .part v0000022da1748210_0, 1, 1;
+L_0000022da1743b50 .part v0000022da17440f0_0, 1, 1;
+    .scope S_0000022da1748080;
+T_0 ;
+    %pushi/vec4 0, 0, 5;
+    %store/vec4 v0000022da184aad0_0, 0, 5;
+    %pushi/vec4 0, 0, 2;
+    %store/vec4 v0000022da1748210_0, 0, 2;
+    %pushi/vec4 0, 0, 3;
+    %store/vec4 v0000022da17440f0_0, 0, 3;
+    %end;
+    .thread T_0;
+    .scope S_0000022da1748080;
+T_1 ;
+    %wait E_0000022da17378e0;
+    %load/vec4 v0000022da184aad0_0;
+    %addi 1, 0, 5;
+    %assign/vec4 v0000022da184aad0_0, 0;
+    %load/vec4 v0000022da1748210_0;
+    %cmpi/e 2, 0, 2;
+    %jmp/0xz  T_1.0, 4;
+    %pushi/vec4 0, 0, 2;
+    %store/vec4 v0000022da1748210_0, 0, 2;
+    %jmp T_1.1;
+T_1.0 ;
+    %load/vec4 v0000022da1748210_0;
+    %addi 1, 0, 2;
+    %assign/vec4 v0000022da1748210_0, 0;
+T_1.1 ;
+    %jmp T_1;
+    .thread T_1;
+    .scope S_0000022da1748080;
+T_2 ;
+    %wait E_0000022da17378e0;
+    %load/vec4 v0000022da17440f0_0;
+    %cmpi/e 4, 0, 3;
+    %jmp/0xz  T_2.0, 4;
+    %pushi/vec4 0, 0, 3;
+    %store/vec4 v0000022da17440f0_0, 0, 3;
+    %jmp T_2.1;
+T_2.0 ;
+    %load/vec4 v0000022da17440f0_0;
+    %addi 1, 0, 3;
+    %assign/vec4 v0000022da17440f0_0, 0;
+T_2.1 ;
+    %jmp T_2;
+    .thread T_2;
+    .scope S_0000022da1748080;
+T_3 ;
+    %wait E_0000022da17383e0;
+    %load/vec4 v0000022da1748210_0;
+    %parti/s 1, 1, 2;
+    %assign/vec4 v0000022da1744190_0, 0;
+    %load/vec4 v0000022da17440f0_0;
+    %parti/s 1, 1, 2;
+    %assign/vec4 v0000022da1744230_0, 0;
+    %jmp T_3;
+    .thread T_3;
+    .scope S_0000022da1738930;
+T_4 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000022da17444b0_0, 0, 1;
+    %end;
+    .thread T_4;
+    .scope S_0000022da1738930;
+T_5 ;
+T_5.0 ;
+    %delay 5, 0;
+    %load/vec4 v0000022da17444b0_0;
+    %inv;
+    %store/vec4 v0000022da17444b0_0, 0, 1;
+    %jmp T_5.0;
+    %end;
+    .thread T_5;
+    .scope S_0000022da1738930;
+T_6 ;
+    %delay 200, 0;
+    %vpi_call 2 45 "$finish" {0 0 0};
+    %end;
+    .thread T_6;
+    .scope S_0000022da1738930;
+T_7 ;
+    %vpi_call 2 47 "$dumpfile", "freq_divider.vcd" {0 0 0};
+    %vpi_call 2 48 "$dumpvars", 32'sb00000000000000000000000000000000, S_0000022da1738930 {0 0 0};
+    %end;
+    .thread T_7;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "freq_divider.v";

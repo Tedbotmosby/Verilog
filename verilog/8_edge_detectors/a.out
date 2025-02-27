@@ -1,0 +1,95 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1110-g18392a46)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_0000029f9041bdf0 .scope module, "edgedetector_tb" "edgedetector_tb" 2 18;
+ .timescale 0 0;
+v0000029f902f3de0_0 .net "anyedge", 0 0, L_0000029f9041bcd0;  1 drivers
+v0000029f902f44c0_0 .var "clk", 0 0;
+v0000029f902f47e0_0 .net "falledge", 0 0, L_0000029f904171c0;  1 drivers
+v0000029f902f3f20_0 .var "in", 0 0;
+v0000029f902f4920_0 .net "riseedge", 0 0, L_0000029f9041a7f0;  1 drivers
+S_0000029f902f6900 .scope module, "uut" "edgedetector" 2 23, 2 1 0, S_0000029f9041bdf0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "clk";
+    .port_info 1 /INPUT 1 "in";
+    .port_info 2 /OUTPUT 1 "riseedge";
+    .port_info 3 /OUTPUT 1 "falledge";
+    .port_info 4 /OUTPUT 1 "anyedge";
+L_0000029f90419340 .functor NOT 1, v0000029f902f6c70_0, C4<0>, C4<0>, C4<0>;
+L_0000029f9041a7f0 .functor AND 1, L_0000029f90419340, v0000029f902f3f20_0, C4<1>, C4<1>;
+L_0000029f90417320 .functor NOT 1, v0000029f902f3f20_0, C4<0>, C4<0>, C4<0>;
+L_0000029f904171c0 .functor AND 1, v0000029f902f6c70_0, L_0000029f90417320, C4<1>, C4<1>;
+L_0000029f9041bcd0 .functor XOR 1, v0000029f902f6c70_0, v0000029f902f3f20_0, C4<0>, C4<0>;
+v0000029f9041a750_0 .net *"_ivl_0", 0 0, L_0000029f90419340;  1 drivers
+v0000029f90416d10_0 .net *"_ivl_4", 0 0, L_0000029f90417320;  1 drivers
+v0000029f904192a0_0 .net "anyedge", 0 0, L_0000029f9041bcd0;  alias, 1 drivers
+v0000029f902f6a90_0 .net "clk", 0 0, v0000029f902f44c0_0;  1 drivers
+v0000029f902f6b30_0 .net "falledge", 0 0, L_0000029f904171c0;  alias, 1 drivers
+v0000029f902f6bd0_0 .net "in", 0 0, v0000029f902f3f20_0;  1 drivers
+v0000029f902f6c70_0 .var "in_delayed", 0 0;
+v0000029f902f6d10_0 .net "riseedge", 0 0, L_0000029f9041a7f0;  alias, 1 drivers
+E_0000029f902e52d0 .event posedge, v0000029f902f6a90_0;
+    .scope S_0000029f902f6900;
+T_0 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000029f902f6c70_0, 0, 1;
+    %end;
+    .thread T_0;
+    .scope S_0000029f902f6900;
+T_1 ;
+    %wait E_0000029f902e52d0;
+    %load/vec4 v0000029f902f6bd0_0;
+    %assign/vec4 v0000029f902f6c70_0, 0;
+    %jmp T_1;
+    .thread T_1;
+    .scope S_0000029f9041bdf0;
+T_2 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000029f902f44c0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000029f902f3f20_0, 0, 1;
+    %end;
+    .thread T_2;
+    .scope S_0000029f9041bdf0;
+T_3 ;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000029f902f3f20_0, 0, 1;
+    %delay 30, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000029f902f3f20_0, 0, 1;
+    %end;
+    .thread T_3;
+    .scope S_0000029f9041bdf0;
+T_4 ;
+T_4.0 ;
+    %delay 5, 0;
+    %load/vec4 v0000029f902f44c0_0;
+    %inv;
+    %store/vec4 v0000029f902f44c0_0, 0, 1;
+    %jmp T_4.0;
+    %end;
+    .thread T_4;
+    .scope S_0000029f9041bdf0;
+T_5 ;
+    %delay 200, 0;
+    %vpi_call 2 35 "$finish" {0 0 0};
+    %end;
+    .thread T_5;
+    .scope S_0000029f9041bdf0;
+T_6 ;
+    %vpi_call 2 37 "$dumpfile", "edgedetector.vcd" {0 0 0};
+    %vpi_call 2 38 "$dumpvars", 32'sb00000000000000000000000000000000, S_0000029f9041bdf0 {0 0 0};
+    %end;
+    .thread T_6;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "edge_detector.v";

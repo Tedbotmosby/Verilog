@@ -1,0 +1,254 @@
+$date
+	Sat Feb 22 20:50:42 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module freq_divider_tb $end
+$var wire 1 ! outby5 $end
+$var wire 1 " outby4 $end
+$var wire 1 # outby3 $end
+$var wire 1 $ outby2 $end
+$var reg 1 % clk $end
+$scope module uut $end
+$var wire 1 % clk $end
+$var wire 1 # outby3 $end
+$var wire 1 ! outby5 $end
+$var wire 1 " outby4 $end
+$var wire 1 $ outby2 $end
+$var reg 5 & count [4:0] $end
+$var reg 2 ' mod3_counter [1:0] $end
+$var reg 3 ( mod5_counter [2:0] $end
+$var reg 1 ) shiftforby3 $end
+$var reg 1 * shiftforby5 $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0*
+0)
+b0 (
+b0 '
+b0 &
+0%
+0$
+0#
+0"
+0!
+$end
+#5
+1$
+b1 '
+b1 &
+b1 (
+1%
+#10
+0%
+#15
+1!
+1#
+0$
+1"
+b10 (
+b10 '
+b10 &
+1%
+#20
+1*
+1)
+0%
+#25
+1$
+b11 &
+b11 (
+b0 '
+1%
+#30
+0#
+0)
+0%
+#35
+0$
+0"
+b100 (
+b1 '
+b100 &
+1%
+#40
+0!
+0*
+0%
+#45
+1#
+1$
+b10 '
+b101 &
+b0 (
+1%
+#50
+1)
+0%
+#55
+0$
+1"
+b1 (
+b110 &
+b0 '
+1%
+#60
+0#
+0)
+0%
+#65
+1!
+1$
+b1 '
+b111 &
+b10 (
+1%
+#70
+1*
+0%
+#75
+1#
+0$
+0"
+b11 (
+b10 '
+b1000 &
+1%
+#80
+1)
+0%
+#85
+1$
+b1001 &
+b100 (
+b0 '
+1%
+#90
+0!
+0#
+0*
+0)
+0%
+#95
+0$
+1"
+b1 '
+b1010 &
+b0 (
+1%
+#100
+0%
+#105
+1#
+1$
+b10 '
+b1011 &
+b1 (
+1%
+#110
+1)
+0%
+#115
+1!
+0$
+0"
+b10 (
+b1100 &
+b0 '
+1%
+#120
+0#
+1*
+0)
+0%
+#125
+1$
+b1 '
+b1101 &
+b11 (
+1%
+#130
+0%
+#135
+1#
+0$
+1"
+b100 (
+b10 '
+b1110 &
+1%
+#140
+0!
+0*
+1)
+0%
+#145
+1$
+b1111 &
+b0 '
+b0 (
+1%
+#150
+0#
+0)
+0%
+#155
+0$
+0"
+b1 (
+b1 '
+b10000 &
+1%
+#160
+0%
+#165
+1#
+1!
+1$
+b10 '
+b10001 &
+b10 (
+1%
+#170
+1*
+1)
+0%
+#175
+0$
+1"
+b11 (
+b10010 &
+b0 '
+1%
+#180
+0#
+0)
+0%
+#185
+1$
+b1 '
+b10011 &
+b100 (
+1%
+#190
+0!
+0*
+0%
+#195
+1#
+0$
+0"
+b10 '
+b10100 &
+b0 (
+1%
+#200
+1)
+0%

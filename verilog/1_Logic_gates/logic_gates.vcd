@@ -1,0 +1,45 @@
+$date
+	Fri Feb 21 23:16:26 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module logic_gates_tb $end
+$var wire 1 ! xor_out $end
+$var wire 1 " or_out $end
+$var wire 1 # and_out $end
+$var reg 1 $ a $end
+$var reg 1 % b $end
+$scope module uut $end
+$var wire 1 $ a $end
+$var wire 1 % b $end
+$var wire 1 # out_and $end
+$var wire 1 " out_or $end
+$var wire 1 ! out_xor $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0%
+0$
+0#
+0"
+0!
+$end
+#5
+1#
+1"
+1%
+1$
+#10
+0#
+1!
+0%
+#15
+1%
+0$
+#50
