@@ -1,0 +1,41 @@
+$date
+	Sat May 10 08:44:18 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module tb_gen $end
+$var wire 8 ! out [7:0] $end
+$var reg 8 " in [7:0] $end
+$var reg 3 # shft [2:0] $end
+$scope module uut $end
+$var wire 8 $ in [7:0] $end
+$var wire 8 % out [7:0] $end
+$var wire 3 & shft [2:0] $end
+$scope begin genblk1[0] $end
+$scope begin genblk2 $end
+$upscope $end
+$upscope $end
+$scope begin genblk1[1] $end
+$scope begin genblk3 $end
+$upscope $end
+$upscope $end
+$scope begin genblk1[2] $end
+$scope begin genblk3 $end
+$upscope $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b111 &
+b10000000 %
+b10011101 $
+b111 #
+b10011101 "
+b10000000 !
+$end
