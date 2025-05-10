@@ -1,0 +1,29 @@
+$date
+	Sat May 10 08:52:23 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module tb $end
+$var wire 3 ! out [2:0] $end
+$var reg 4 " in [3:0] $end
+$scope module uut $end
+$var wire 4 # in [3:0] $end
+$var wire 3 $ out [2:0] $end
+$var reg 4 % countones [3:0] $end
+$var integer 32 & i [31:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b100 &
+b100 %
+b100 $
+b1111 #
+b1111 "
+b100 !
+$end
